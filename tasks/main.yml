@@ -1,2 +1,25 @@
 ---
-# tasks file for google_chrome
+
+- name: Add Google Chrome key
+  apt_key:
+    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+    state: present
+
+- name: Remove old Google Chrome repo
+  apt_repository:
+    repo: "deb https://dl.google.com/linux/chrome/deb/ stable main"
+    state: absent
+    filename: 'google-chrome'
+
+- name: Add Google Chrome repo
+  apt_repository:
+    repo: "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+    state: present
+    filename: 'google-chrome'
+
+- name: Install Google Chrome
+  apt:
+    name: google-chrome-stable
+    state: present
+    update_cache: yes
+
