@@ -38,7 +38,7 @@ galaxy_info:
   #   - 1.0
   #   - 7
   #   - 99.99
-  versions:
+  platforms:
     - name: Ubuntu
       versions:
         - all
