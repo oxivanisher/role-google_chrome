@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: google_chrome
   author: Marc Urben
   description: Deploy Google Chrome
   company: Thunderbluff
