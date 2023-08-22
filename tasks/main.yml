@@ -21,4 +21,4 @@
     name: google-chrome-stable
     state: present
     update_cache: true
-  ignore_errors: ansible_check_mode
+  ignore_errors: "{{ ansible_check_mode }}"
