@@ -3,18 +3,24 @@
   ansible.builtin.apt_key:
     url: https://dl-ssl.google.com/linux/linux_signing_key.pub
     state: present
+  become: true
+  become_user: root
 
 - name: Remove old Google Chrome repo
   ansible.builtin.apt_repository:
     repo: "deb http://dl.google.com/linux/chrome/deb/ stable main"
     state: absent
     filename: "google-chrome"
+  become: true
+  become_user: root
 
 - name: Add Google Chrome repo
   ansible.builtin.apt_repository:
     repo: "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main"
     state: present
     filename: "google-chrome"
+  become: true
+  become_user: root
 
 - name: Install Google Chrome
   ansible.builtin.apt:
@@ -22,3 +28,5 @@
     state: present
     update_cache: true
   ignore_errors: "{{ ansible_check_mode }}"
+  become: true
+  become_user: root
