@@ -1,7 +1,7 @@
 ---
 - name: Add Google Chrome key
   ansible.builtin.apt_key:
-    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+    url: https://dl.google.com/linux/linux_signing_key.pub
     state: present
   become: true
   become_user: root
